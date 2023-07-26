@@ -1,0 +1,46 @@
+[18-Jul-2023 18:48:10 UTC] PHP Warning:  require(/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:48:10 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:49:47 UTC] PHP Warning:  require(/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:49:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:51:47 UTC] PHP Warning:  require(/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:51:47 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:52:51 UTC] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 56
+[18-Jul-2023 18:53:15 UTC] PHP Warning:  require(/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:53:15 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:53:29 UTC] PHP Warning:  require(/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:53:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:55:08 UTC] PHP Warning:  require(/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 18:55:08 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 19:00:52 UTC] PHP Warning:  require(/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 19:00:52 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 19:01:46 UTC] PHP Warning:  require(/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 19:01:46 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 19:02:36 UTC] PHP Warning:  require(/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php): Failed to open stream: No such file or directory in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
+[18-Jul-2023 19:02:36 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/y7u0cp8wb6ur/public_html/dev.superbullionwire.com/index.php on line 34
