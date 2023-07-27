@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Category\CategoryController;
+use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+//Category Routes
+Route::controller(CategoryController::class)->prefix('category')->group(function(){
+    Route::get('/','index')->name('category.index');
+    Route::post('/create','create')->name('category.create');
+    Route::post('/update','update')->name('category.update');
+    Route::post('/delete/{id}','destroy')->name('category.destroy');
+});
+
+//Product Routes
+Route::controller(ProductController::class)->prefix('product')->group(function(){
+    Route::get('/','index')->name('product.index');
+});
+
+require __DIR__.'/auth.php';
