@@ -22,7 +22,7 @@
             <!-- Header Top Message Start -->
             <div class="col text-center header-top-center">
                 <div class="header-top-message text-upper">
-                    <span>Free Shipping</span>This Week Order Over - $75
+                    <span>Our Number</span>+923209487652
                 </div>
             </div>
             <!-- Header Top Language Currency -->
@@ -57,7 +57,7 @@
                         <!-- Ec Header Logo Start -->
                         <div class="align-self-center">
                             <div class="header-logo">
-                                <a href="#"><img src="{{asset('assets/images/logo/logo.png')}}" alt="Site Logo" /><img
+                                <a href="{{route('welcome')}}"><img src="{{asset('assets/images/logo/logo.png')}}" alt="Site Logo" /><img
                                         class="dark-logo" src="{{asset('assets/images/logo/dark-logo.png')}}" alt="Site Logo"
                                         style="display: none;" /></a>
                             </div>
@@ -90,7 +90,7 @@
                     <!-- Ec Header Logo Start -->
                     <div class="col">
                         <div class="header-logo">
-                            <a href="index.html"><img src="{{asset('assets/images/logo/logo.png')}}" alt="Site Logo" /><img
+                            <a href="{{route('welcome')}}"><img src="{{asset('assets/images/logo/logo.png')}}" alt="Site Logo" /><img
                                     class="dark-logo" src="{{asset('assets/images/logo/dark-logo.png')}}" alt="Site Logo"
                                     style="display: none;" /></a>
                         </div>
@@ -119,10 +119,10 @@
                                         <i class="fi fi-rr-apps"></i>
                                     </a>
                                     <ul>
-                                        <li><a href="">Home</a></li>
-                                        <li class="dropdown position-static"><a href="">Categories</a>
+                                        <li><a href="{{route('welcome')}}">Home</a></li>
+                                        <li class="dropdown position-static"><a href="{{route('product-us')}}">Product</a>
                                         </li>
-                                        <li class="dropdown"><a href="#">Products</a>
+                                        <li class="dropdown"><a href="{{route('about-us')}}">About</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -140,8 +140,8 @@
     <div class="ec-menu-inner">
         <div class="ec-menu-content">
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="javascript:void(0)">Categories</a>
+                <li><a href="{{route('welcome')}}">Home</a></li>
+                <!-- <li><a href="javascript:void(0)">Categories</a>
                     <ul class="sub-menu">
                         <li>
                             <a href="javascript:void(0)">Classic Variation</a>
@@ -191,9 +191,9 @@
                                     src="assets/images/menu-banner/1.jpg" alt=""></a>
                         </li>
                     </ul>
-                </li>
-                <li><a href="javascript:void(0)">Products</a>
-                    <ul class="sub-menu">
+                </li> -->
+                <li><a href="{{route('product-us')}}">Products</a>
+                    <!-- <ul class="sub-menu">
                         <li><a href="javascript:void(0)">Product page</a>
                             <ul class="sub-menu">
                                 <li><a href="product-left-sidebar.html">Product left sidebar</a></li>
@@ -222,9 +222,9 @@
                         <li><a href="product-360-full-width.html">360 full width</a></li>
                         <li><a href="product-video-full-width.html">Video full width</a></li>
                         <li><a href="product-gallery-full-width.html">Gallery full width</a></li>
-                    </ul>
+                    </ul> -->
                 </li>
-                <li><a href="javascript:void(0)">Others</a>
+                <!-- <li><a href="javascript:void(0)">Others</a>
                     <ul class="sub-menu">
                         <li><a href="javascript:void(0)">Mail Confirmation</a>
                             <ul class="sub-menu">
@@ -324,31 +324,31 @@
                         <li><a href="elemets-accordions.html">Accordions</a></li>
                         <li><a href="elemets-blog.html">Blogs</a></li>
                     </ul>
-                </li>
-                <li><a href="offer.html">Hot Offers</a></li>
+                </li> -->
+                <li><a href="{{route('about-us')}}">About</a></li>
             </ul>
         </div>
         <div class="header-res-lan-curr">
             <div class="header-top-lan-curr">
                 <!-- Language Start -->
-                <div class="header-top-lan dropdown">
+                <!-- <div class="header-top-lan dropdown">
                     <button class="dropdown-toggle text-upper" data-bs-toggle="dropdown">Language <i
                             class="ecicon eci-caret-down" aria-hidden="true"></i></button>
                     <ul class="dropdown-menu">
                         <li class="active"><a class="dropdown-item" href="#">English</a></li>
                         <li><a class="dropdown-item" href="#">Italiano</a></li>
                     </ul>
-                </div>
+                </div> -->
                 <!-- Language End -->
                 <!-- Currency Start -->
-                <div class="header-top-curr dropdown">
+                <!-- <div class="header-top-curr dropdown">
                     <button class="dropdown-toggle text-upper" data-bs-toggle="dropdown">Currency <i
                             class="ecicon eci-caret-down" aria-hidden="true"></i></button>
                     <ul class="dropdown-menu">
                         <li class="active"><a class="dropdown-item" href="#">USD $</a></li>
                         <li><a class="dropdown-item" href="#">EUR €</a></li>
                     </ul>
-                </div>
+                </div> -->
                 <!-- Currency End -->
             </div>
             <!-- Social Start -->
