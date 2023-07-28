@@ -1,57 +1,15 @@
 @extends('user.layout.index')
 @section('content')
-    <!-- Main Slider Start -->
-    <div class="sticky-header-next-sec ec-main-slider section section-space-pb">
-        <div class="ec-slider swiper-container main-slider-nav main-slider-dot">
-            <!-- Main slider -->
-            <div class="swiper-wrapper">
-                <div class="ec-slide-item swiper-slide d-flex ec-slide-1">
-                    <div class="container align-self-center">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 align-self-center">
-                                <div class="ec-slide-content slider-animation">
-                                    <h1 class="ec-slide-title" style="color: black;">Elevate Your Designs with Bullion Wires</h1>
-                                    <!-- <h2 class="ec-slide-stitle">Sale Offer</h2> -->
-                                    <p style="color: black;">Discover a world of exquisite craftsmanship as we offer a diverse range of gilded bullion wires, perfect for adding a touch of opulence to your creations.</p>
-                                    <!-- <a href="#" class="btn btn-lg btn-dark">Order Now</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="ec-slide-item swiper-slide d-flex ec-slide-2">
-                    <div class="container align-self-center">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 align-self-center">
-                                <div class="ec-slide-content slider-animation">
-                                    <h1 class="ec-slide-title" style="color: black;">Unleash Creativity with Bullion Wires</h1>
-                                    <!-- <h2 class="ec-slide-stitle">Sale Offer</h2> -->
-                                    <p style="color: black;">Explore our premium selection of bullion wires, each thread meticulously crafted to infuse your projects with unparalleled luxury and elegance.</p>
-                                    <!-- <a href="#" class="btn btn-lg btn-dark">Order Now</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination swiper-pagination-white"></div>
-            <div class="swiper-buttons">
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </div>
-    <!-- Main Slider End -->
 
-    <!-- Product tab Area Start -->
-    <section class="section ec-product-tab section-space-p" id="collection">
+<!-- Product tab Area Start -->
+<section class="section ec-product-tab section-space-p" id="collection">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="section-title">
-                        <h2 class="ec-bg-title">Our Top Collection</h2>
+                        <h2 class="ec-bg-title">Our Products</h2>
                         <h2 class="ec-title">Our Top Collection</h2>
-                        <p class="sub-title">Browse The Collection of Top Products</p>
+                        <p class="sub-title">Filter  The Collection of Top Products</p>
                     </div>
                 </div>
 
@@ -140,7 +98,7 @@
                             <i class="fi fi-ts-truck-moving"></i>
                         </div>
                         <div class="ec-service-desc">
-                        <h2>Best Quality</h2>
+                            <h2>Best Quality</h2>
                             <p>For all over the world</p>
                         </div>
                     </div>
@@ -181,4 +139,6 @@
             </div>
         </div>
     </section>
+
+
 @endsection
