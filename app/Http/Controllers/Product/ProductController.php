@@ -32,4 +32,11 @@ class ProductController extends Controller
         return view('auth.dashboard.pages.product-list',compact('data'));
     }
 
+    public function specificProductList($id)
+    {
+        $data = $this->productService->specificProductList($id);
+        return view('auth.dashboard.pages.product-detail',compact('data'));
+        // dd($data,$data['detail']->product_name);
+    }
+
 }

@@ -45,8 +45,8 @@
 													{{-- <td>2021-10-30</td> --}}
 													<td>
 														<div class="btn-group mb-1">
-															<button type="button" data-id="{{$value->id}}"
-																class="btn btn-outline-success">Info</button>
+															<a href="{{route('specific.product.data'). '/' . $value->id}}" type="button" data-id="{{$value->id}}"
+																class="btn btn-outline-success info-btn">Info</a>
 															<button type="button"
 																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
 																data-bs-toggle="dropdown" aria-haspopup="true"
@@ -71,4 +71,21 @@
 					</div>
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
+
+
+
+    {{-- <script>
+        $(document).ready(function(){
+            $('.info-btn').click(function(){
+                var productId = $(this).data("id");
+                var url = '{{ route("specific.product.data", ":id") }}';
+                url = url.replace(':id', productId);
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: { _token: "{{ csrf_token() }}" },
+                });
+            });
+        });
+    </script> --}}
 @endsection

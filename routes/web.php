@@ -43,6 +43,7 @@ Route::controller(ProductController::class)->prefix('product')->group(function()
     Route::get('/','index')->name('product.index');
     Route::post('/create', 'create')->name('product.create');
     Route::get('/product-list', 'productList')->name('product.list');
+    Route::get('/specific/data/{id?}', 'specificProductList')->name('specific.product.data');
 });
 
 require __DIR__.'/auth.php';

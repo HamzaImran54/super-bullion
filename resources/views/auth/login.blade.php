@@ -75,10 +75,15 @@
 			<div class="row justify-content-center">
 				<div class="col-lg-6 col-md-10">
 					<div class="card">
+                        @if(session('errors') && session('errors')->has('email'))
+                        <div class="alert alert-danger" id="alert">
+                            {{ session('errors')->first('email') }}
+                        </div>
+                        @endif
 						<div class="card-header bg-primary">
 							<div class="ec-brand">
 								<a href="index.html" title="Ekka">
-									<img class="ec-brand-icon" src="assets/img/logo/logo-login.png" alt="" />
+									<img class="ec-brand-icon" src="{{asset('admin/img/logo/logo-login.png')}}" alt="" />
 								</a>
 							</div>
 						</div>
@@ -132,6 +137,18 @@
 		<script src="admin/js/ekka.js"></script>
 	</body>
 
-<!-- Mirrored from maraviyainfotech.com/projects/ekka/ekka-admin/sign-in.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 17 Jul 2023 14:45:02 GMT -->
+    <script>
+
+        // Auto-hide the success alert after 5 seconds
+        setTimeout(function() {
+            var successAlert = document.getElementById('alert');
+            if (successAlert) {
+                successAlert.style.display = 'none';
+            }
+        }, 5000); // 5000 milliseconds = 5 seconds
+
+
+    </script>
+
 </html>
 

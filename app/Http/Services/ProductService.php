@@ -48,4 +48,14 @@ class ProductService {
         return $data;
     }
 
+    public function specificProductList($id)
+    {
+        $data['detail'] = Product::with('images','category')->where('id', $id)->first();
+        $data['productImage'] = [];
+        foreach ($data['detail']->images as $image) {
+            $data['productImage'][] = $image->filename;
+        }
+        return $data;
+    }
+
 }
