@@ -11,9 +11,10 @@
 								<span><i class="mdi mdi-chevron-right"></i></span>Product</p>
 						</div>
 						<div>
-							<a href="" class="btn btn-primary"> View All
+							<a href="{{route('product.list')}}" class="btn btn-primary"> View All
 							</a>
 						</div>
+
 					</div>
 					<div class="row">
 						<div class="col-12">
@@ -21,7 +22,11 @@
 								<div class="card-header card-header-border-bottom">
 									<h2>Add Product</h2>
 								</div>
-
+                                @if(session('success'))
+                                <div class="alert alert-success" id="success-alert">
+                                    {{ session('success') }}
+                                </div>
+                                @endif
 								<div class="card-body">
 									<div class="row ec-vendor-uploads">
 										{{-- <div class="col-lg-4">
@@ -51,14 +56,15 @@
 										</div> --}}
 										<div class="col-lg-12">
 											<div class="ec-vendor-upload-detail">
-												<form class="row g-3">
+												<form method="POST" action="{{route('product.create')}}" enctype="multipart/form-data" class="row g-3">
+                                                    @csrf
 													<div class="col-md-6">
 														<label for="inputEmail4" class="form-label">Product name</label>
 														<input type="text" class="form-control" name="product_name" id="inputEmail4" required>
 													</div>
 													<div class="col-md-6">
 														<label class="form-label">Select Categories</label>
-														<select name="categories" id="Categories" class="form-select" required>
+														<select name="category_id" id="Categories" class="form-select" required>
                                                             <option disabled selected>Choose..</option>
                                                             @foreach ($response as $category)
                                                                 <option value="{{$category->id}}">{{$category->category_name}}</option>
@@ -68,12 +74,12 @@
 													<div class="col-md-12">
 														<label for="productImage" class="col-12 col-form-label">Upload Image</label>
 														<div class="col-12">
-															<input id="productImage" name="productImage" class="form-control" type="file" multiple accept=".png, .jpg, .jpeg">
+															<input id="productImage" name="productImage[]" class="form-control" type="file" multiple accept=".png, .jpg, .jpeg" required>
 														</div>
 													</div>
 													<div class="col-md-12">
 														<label class="form-label">Product Description</label>
-														<textarea class="form-control" name="description" rows="2"></textarea>
+														<textarea class="form-control" name="description" rows="2" required></textarea>
 													</div>
 													<div class="col-md-1 mb-25">
 														<label class="form-label">Colors</label>
@@ -87,7 +93,7 @@
 													</div>
 													<div class="col-md-6">
 														<label class="form-label">Price</label>
-														<input type="number" name="price" class="form-control" id="price1">
+														<input type="number" name="price" class="form-control" id="price1" required>
 													</div>
 													<div class="col-md-12">
 														<button type="submit" class="btn btn-primary">Submit</button>
@@ -103,6 +109,19 @@
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
 
+
+            <script>
+
+                // Auto-hide the success alert after 5 seconds
+                setTimeout(function() {
+                    var successAlert = document.getElementById('success-alert');
+                    if (successAlert) {
+                        successAlert.style.display = 'none';
+                    }
+                }, 5000); // 5000 milliseconds = 5 seconds
+
+
+            </script>
 
 @endsection
 
