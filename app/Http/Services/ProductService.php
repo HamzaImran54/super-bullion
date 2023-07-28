@@ -42,4 +42,10 @@ class ProductService {
 
     }
 
+    public function productList()
+    {
+        $data = Product::with('images')->get();
+        return $data;
+    }
+
 }

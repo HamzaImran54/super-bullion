@@ -28,7 +28,8 @@ class ProductController extends Controller
 
     public function productList()
     {
-        return view('auth.dashboard.pages.product-list');
+        $data = $this->productService->productList();
+        return view('auth.dashboard.pages.product-list',compact('data'));
     }
 
 }

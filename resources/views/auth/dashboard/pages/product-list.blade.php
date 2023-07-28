@@ -10,7 +10,7 @@
 								<span><i class="mdi mdi-chevron-right"></i></span>Product</p>
 						</div>
 						<div>
-							<a href="product-list.html" class="btn btn-primary"> Add Porduct</a>
+							<a href="{{route('product.create')}}" class="btn btn-primary"> Add Porduct</a>
 						</div>
 					</div>
 					<div class="row">
@@ -22,29 +22,30 @@
 											style="width:100%">
 											<thead>
 												<tr>
-													<th>Name</th>
+													<th>Product Name</th>
 													<th>Price</th>
-													<th>Offer</th>
-													<th>Purchased</th>
-													<th>Stock</th>
-													<th>Status</th>
-													<th>Date</th>
+													<th>Color</th>
+													<th>Weight</th>
+													<th>Description</th>
+													{{-- <th>Status</th> --}}
+													{{-- <th>Date</th> --}}
 													<th>Action</th>
 												</tr>
 											</thead>
 
 											<tbody>
-												<tr>
-													<td>Baby shoes</td>
-													<td>$20</td>
-													<td>25% OFF</td>
-													<td>61</td>
-													<td>5421</td>
-													<td>ACTIVE</td>
-													<td>2021-10-30</td>
+                                                @foreach ($data as $key => $value)
+                                                <tr>
+													<td>{{$value->product_name}}</td>
+													<td>{{$value->price}}</td>
+													<td><input type="color" value="{{$value->color}}" readonly></td>
+													<td>{{isset($value->weight)?$value->weight : "N/A"}}</td>
+													<td>{{$value->description}}</td>
+													{{-- <td>ACTIVE</td> --}}
+													{{-- <td>2021-10-30</td> --}}
 													<td>
 														<div class="btn-group mb-1">
-															<button type="button"
+															<button type="button" data-id="{{$value->id}}"
 																class="btn btn-outline-success">Info</button>
 															<button type="button"
 																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
@@ -54,12 +55,13 @@
 															</button>
 
 															<div class="dropdown-menu">
-																<a class="dropdown-item" href="#">Edit</a>
-																<a class="dropdown-item" href="#">Delete</a>
+																<a class="dropdown-item"  data-id="{{$value->id}}"  href="#">Edit</a>
+																<a class="dropdown-item"  data-id="{{$value->id}}"  href="#">Delete</a>
 															</div>
 														</div>
 													</td>
 												</tr>
+                                                @endforeach
 											</tbody>
 										</table>
 									</div>
