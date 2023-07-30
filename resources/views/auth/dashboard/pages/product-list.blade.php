@@ -1,6 +1,5 @@
 @extends('auth.dashboard.layouts.app')
 @section('content')
-    			<!-- CONTENT WRAPPER -->
 			<div class="ec-content-wrapper">
 				<div class="content">
 					<div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">

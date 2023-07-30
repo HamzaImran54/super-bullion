@@ -14,7 +14,7 @@
                                     <ul class="align-items-center">
                                         <li class="ec-footer-link">Amar St, Bilal Ganj, Lahore, Punjab</li>
                                         <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">
-                                        +92 320 948 7652</a></li>
+                                        +93219458362</a></li>
                                         <li class="ec-footer-link"><span>Email:</span><a
                                                 href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
                                     </ul>
@@ -242,3 +242,19 @@
             </div>
         </div>
     </div> --}}
+
+
+
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/64c62f6a94cf5d49dc674fc1/1h6j2ie8g';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
