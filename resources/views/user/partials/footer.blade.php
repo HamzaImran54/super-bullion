@@ -14,7 +14,7 @@
                                     <ul class="align-items-center">
                                         <li class="ec-footer-link">Amar St, Bilal Ganj, Lahore, Punjab</li>
                                         <li class="ec-footer-link"><span>Call Us:</span><a href="tel:+440123456789">
-                                        +92 320 948 7652</a></li>
+                                        +93219458362</a></li>
                                         <li class="ec-footer-link"><span>Email:</span><a
                                                 href="mailto:example@ec-email.com">+example@ec-email.com</a></li>
                                     </ul>
