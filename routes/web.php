@@ -47,11 +47,11 @@ Route::controller(CategoryController::class)->prefix('category')->group(function
 });
 
 //Product Routes
-Route::controller(ProductController::class)->prefix('product')->group(function(){
-    Route::get('/','productList')->name('product.list');
+Route::controller(ProductController::class)->group(function(){
+    Route::get('/product','productList')->name('product.list');
     Route::post('/create', 'create')->name('product.create');
     Route::get('/add', 'index')->name('product.add');
-    Route::get('/specific/data/{id?}', 'specificProductList')->name('specific.product.data');
+    Route::get('/product-detail-{id?}', 'specificProductList')->name('specific.product.data');
 });
 
 require __DIR__.'/auth.php';
