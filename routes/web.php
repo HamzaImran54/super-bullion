@@ -48,9 +48,9 @@ Route::controller(CategoryController::class)->prefix('category')->group(function
 
 //Product Routes
 Route::controller(ProductController::class)->prefix('product')->group(function(){
-    Route::get('/','index')->name('product.index');
+    Route::get('/','productList')->name('product.list');
     Route::post('/create', 'create')->name('product.create');
-    Route::get('/product-list', 'productList')->name('product.list');
+    Route::get('/product/add', 'index')->name('product.add');
     Route::get('/specific/data/{id?}', 'specificProductList')->name('specific.product.data');
 });
 

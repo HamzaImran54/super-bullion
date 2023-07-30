@@ -10,7 +10,7 @@
 								<span><i class="mdi mdi-chevron-right"></i></span>Product</p>
 						</div>
 						<div>
-							<a href="{{route('product.create')}}" class="btn btn-primary"> Add Porduct</a>
+							<a href="{{route('product.add')}}" class="btn btn-primary"> Add Porduct</a>
 						</div>
 					</div>
 					<div class="row">
@@ -71,21 +71,4 @@
 					</div>
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
-
-
-
-    {{-- <script>
-        $(document).ready(function(){
-            $('.info-btn').click(function(){
-                var productId = $(this).data("id");
-                var url = '{{ route("specific.product.data", ":id") }}';
-                url = url.replace(':id', productId);
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: { _token: "{{ csrf_token() }}" },
-                });
-            });
-        });
-    </script> --}}
 @endsection
