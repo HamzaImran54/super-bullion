@@ -26,7 +26,7 @@
                                 <h4 class="ec-footer-heading">Information</h4>
                                 <div class="ec-footer-links">
                                     <ul class="align-items-center">
-                                        <li class="ec-footer-link"><a href="about-us.html">About us</a></li>
+                                        <li class="ec-footer-link"><a href="{{route('about-us')}}">About us</a></li>
                                         <!-- <li class="ec-footer-link"><a href="faq.html">FAQ</a></li>
                                         <li class="ec-footer-link"><a href="track-order.html">Delivery Information</a>
                                         </li>
