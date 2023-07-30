@@ -1,6 +1,5 @@
 @extends('auth.dashboard.layouts.app')
 @section('content')
-    			<!-- CONTENT WRAPPER -->
 			<div class="ec-content-wrapper">
 				<div class="content">
 					<div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">
@@ -71,21 +70,4 @@
 					</div>
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
-
-
-
-    {{-- <script>
-        $(document).ready(function(){
-            $('.info-btn').click(function(){
-                var productId = $(this).data("id");
-                var url = '{{ route("specific.product.data", ":id") }}';
-                url = url.replace(':id', productId);
-                $.ajax({
-                    type: "POST",
-                    url: url,
-                    data: { _token: "{{ csrf_token() }}" },
-                });
-            });
-        });
-    </script> --}}
 @endsection
