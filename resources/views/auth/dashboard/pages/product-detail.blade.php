@@ -2,7 +2,7 @@
 @section('content')
 <div class="ec-content-wrapper">
     <div class="content">
-        <div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">
+        <div class="breadcrumb-wrapper d-flex align-items-center justify-content-between" style="width: 95%">
             <div>
                 <h1>Product Detail</h1>
                 <p class="breadcrumbs"><span><a href="index.html">Home</a></span>
