@@ -5,6 +5,7 @@ namespace App\Http\Services;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImages;
+use Illuminate\Support\Facades\Storage;
 
 class ProductService {
 
@@ -56,6 +57,20 @@ class ProductService {
             $data['productImage'][] = $image->filename;
         }
         return $data;
+    }
+
+    public function delete($id)
+    {
+        $data = Product::with('images')->where('id', $id)->first();
+        if ($data) {
+            foreach ($data->images as $image) {
+                Storage::delete('public/products/' . $image->filename);
+                $image->delete();
+            }
+            $data->delete();
+            return true;
+        }
+
     }
 
 }

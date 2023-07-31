@@ -5,7 +5,7 @@
         <div class="breadcrumb-wrapper d-flex align-items-center justify-content-between" style="width: 95%">
             <div>
                 <h1>Product Detail</h1>
-                <p class="breadcrumbs"><span><a href="index.html">Home</a></span>
+                <p class="breadcrumbs"><span><a href="{{route('dashboard')}}">Home</a></span>
                     <span><i class="mdi mdi-chevron-right"></i></span>Product
                 </p>
             </div>
@@ -32,7 +32,7 @@
                                                 <div class="single-slide zoom-image-hover">
                                                     <img class="img-responsive"
                                                         src="{{ asset('storage/products/'.$image)}}" alt="">
-                                                </div>
+                                                      </div>
                                                 @endforeach
                                             </div>
                                             <div class="single-nav-thumb">

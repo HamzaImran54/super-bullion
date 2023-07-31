@@ -36,7 +36,17 @@ class ProductController extends Controller
     {
         $data = $this->productService->specificProductList($id);
         return view('auth.dashboard.pages.product-detail',compact('data'));
-        // dd($data,$data['detail']->product_name);
+    }
+
+    public function delete($id)
+    {
+        $response = $this->productService->delete($id);
+        if($response == true)
+        {
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

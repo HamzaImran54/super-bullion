@@ -54,6 +54,7 @@ Route::controller(CategoryController::class)->prefix('category')->group(function
         Route::post('/product-create', 'create')->name('product.create');
         Route::get('/product-add', 'index')->name('product.add');
         Route::get('/specific-product-data-{id?}', 'specificProductList')->name('specific.product.data');
+        Route::post('/prodduct-delete-{id?}', 'delete')->name('product.delete');
     });
 
 

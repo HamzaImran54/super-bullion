@@ -55,7 +55,7 @@
 
 															<div class="dropdown-menu">
 																<a class="dropdown-item"  data-id="{{$value->id}}"  href="#">Edit</a>
-																<a class="dropdown-item"  data-id="{{$value->id}}"  href="#">Delete</a>
+																<a class="dropdown-item del-product"  data-id="{{$value->id}}"  href="#">Delete</a>
 															</div>
 														</div>
 													</td>
@@ -70,4 +70,31 @@
 					</div>
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
+
+    <script>
+        $(document).ready(function(){
+            $('.del-product').click(function(){
+                var productID = $(this).data('id');
+                console.log(productID);
+                var confirmed = confirm("Are you sure you want to delete this Product?");
+                if (confirmed) {
+                    $.ajax({
+                    url: "/prodduct-delete-" + productID, // Update the URL to include the category ID
+                    type: "POST",
+                    data: { _token: '{{ csrf_token() }}' },
+                        success: function (response) {
+                        alert("Product deleted successfully!");
+                        location.reload();
+                        },
+                        error: function (error) {
+                            alert("An error occurred while deleting the category.");
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+
+
 @endsection

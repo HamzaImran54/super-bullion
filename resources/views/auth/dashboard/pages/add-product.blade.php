@@ -7,7 +7,7 @@
 					<div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">
 						<div>
 							<h1>Add Product</h1>
-							<p class="breadcrumbs"><span><a href="index.html">Home</a></span>
+							<p class="breadcrumbs"><span><a href="{{route('dashboard')}}">Home</a></span>
 								<span><i class="mdi mdi-chevron-right"></i></span>Product</p>
 						</div>
 						<div>
@@ -74,7 +74,8 @@
 													<div class="col-md-12">
 														<label for="productImage" class="col-12 col-form-label">Upload Image</label>
 														<div class="col-12">
-															<input id="productImage" name="productImage[]" class="form-control" type="file" multiple accept=".png, .jpg, .jpeg" required>
+															{{-- <input id="productImage" name="productImage[]" class="form-control" type="file" multiple accept=".png, .jpg, .jpeg" required>   For Multiple Image   --}}
+															<input id="productImage" name="productImage[]" class="form-control" type="file"  accept=".png, .jpg, .jpeg" required>
 														</div>
 													</div>
 													<div class="col-md-12">
