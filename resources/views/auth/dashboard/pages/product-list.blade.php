@@ -44,7 +44,7 @@
 													{{-- <td>2021-10-30</td> --}}
 													<td>
 														<div class="btn-group mb-1">
-															<a href="{{route('specific.product.data'). $value->id}}" type="button" data-id="{{$value->id}}"
+															<a href="{{route('specific.product.data'). '/' . $value->id}}" type="button" data-id="{{$value->id}}"
 																class="btn btn-outline-success info-btn">Info</a>
 															<button type="button"
 																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
