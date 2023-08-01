@@ -10,7 +10,7 @@
                 </p>
             </div>
             <div>
-                <a href="product-list.html" class="btn btn-primary"> Edit
+                <a href="{{ route('product.edit', ['id' => $data['detail']['id']])}}" class="btn btn-primary"> Edit
                 </a>
             </div>
         </div>

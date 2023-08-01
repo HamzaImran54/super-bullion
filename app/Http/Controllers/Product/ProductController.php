@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductCreateRequest;
+use App\Http\Requests\Product\UpdateProductRequest;
 use App\Http\Services\ProductService;
 use Illuminate\Http\Request;
 
@@ -47,6 +48,19 @@ class ProductController extends Controller
         }else{
             return false;
         }
+    }
+
+    public function edit($id)
+    {
+        $response = $this->productService->specificProductList($id);
+        return view('auth.dashboard.pages.update-product',compact('response'));
+
+    }
+
+    public function update(UpdateProductRequest $request)
+    {
+        $response = $this->productService->update($request);
+        return redirect()->back()->with('success','Product Updated Successfully');
     }
 
 }
