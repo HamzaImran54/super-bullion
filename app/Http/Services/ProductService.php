@@ -52,6 +52,7 @@ class ProductService {
     public function specificProductList($id)
     {
         $data['detail'] = Product::with('images','category')->where('id', $id)->first();
+        $data['category'] = Category::all();
         $data['productImage'] = [];
         foreach ($data['detail']->images as $image) {
             $data['productImage'][] = $image->filename;
@@ -71,6 +72,39 @@ class ProductService {
             return true;
         }
 
+    }
+
+    public function update($request)
+    {
+        $response = Product::with('images')->findOrFail($request->id);
+        $response->product_name = $request->product_name;
+        $response->category_id  = $request->category_id;
+        $response->description  = $request->description;
+        $response->price        = $request->price;
+        $response->weight       = $request->weight;
+        $response->color        = $request->color;
+        $response->save();
+
+
+        if ($request->hasFile('productImage')) {
+            foreach ($response->images as $image) {
+                    Storage::delete('public/products/' . $image->filename);
+                    $image->delete();
+
+            }
+            foreach ($request->file('productImage') as $file) {
+                $timestamp = now()->format('Y-m-d-His');
+                $extension = $file->getClientOriginalExtension();
+                $filename = $timestamp . '_' . $file->getClientOriginalName();
+                $file->storeAs('public/products', $filename);
+
+                $productImage = new ProductImages(['filename' => $filename]);
+                $productImage->product_id = $response->id;
+                $productImage->save();
+            }
+        }
+
+        return true;
     }
 
 }

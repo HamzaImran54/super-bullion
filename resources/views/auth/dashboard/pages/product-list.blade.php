@@ -54,7 +54,7 @@
 															</button>
 
 															<div class="dropdown-menu">
-																<a class="dropdown-item"  data-id="{{$value->id}}"  href="#">Edit</a>
+																<a class="dropdown-item"  data-id="{{$value->id}}"  href="{{ route('product.edit', ['id' => $value->id])}}">Edit</a>
 																<a class="dropdown-item del-product"  data-id="{{$value->id}}"  href="#">Delete</a>
 															</div>
 														</div>
