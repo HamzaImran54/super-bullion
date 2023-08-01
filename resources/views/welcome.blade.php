@@ -77,18 +77,23 @@
                         <div class="tab-pane fade show active" id="tab-pro-for-all">
                             <div class="row">
                                 <!-- Product Content -->
+                                @foreach ($data as $data)
+
+
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6  ec-product-content"
                                     data-animation="fadeIn">
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
                                             <div class="ec-pro-image">
-                                                <a href="" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="percentage">20%</span>
+                                                @foreach ($data->images as $image)
+                                                    <a href="" class="image">
+                                                        <img class="main-image" src="{{ asset('storage/products/' . $image->filename) }}"
+                                                            alt="Product" />
+                                                        <img class="hover-image" src="{{ asset('storage/products/' . $image->filename) }}"
+                                                            alt="Product" />
+                                                    </a>
+                                                @endforeach
+                                                {{-- <span class="percentage">20%</span> --}}
                                                 <a href="#" class="quickview" data-link-action="quickview"
                                                     title="Quick view" data-bs-toggle="modal"
                                                     data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
@@ -103,7 +108,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="">Check Bullion Wire / French Wire / Coiled Spiral Wire For Hand Embroidery
+                                            <h5 class="ec-pro-title"><a href="#">{{ $data->product_name }}
                                                 </a></h5>
                                             <!-- <div class="ec-pro-rating">
                                                 <p>
@@ -111,12 +116,13 @@
                                                 </p>
                                             </div> -->
                                             <span class="ec-price">
-                                                <span class="new-price">$22.00</span>
+                                                <span class="new-price">PKR {{ $data->price }}</span>
                                             </span>
 
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
 
