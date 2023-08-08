@@ -107,4 +107,15 @@ class ProductService {
         return true;
     }
 
+    public function jsonProductDetail($request)
+    {
+        $data['detail'] = Product::with('images','category')->where('id', $request->id)->first();
+        // $data['category'] = Category::where('id',$data['detail']['category_id'])->first();
+        $data['productImage'] = [];
+        foreach ($data['detail']->images as $image) {
+            $data['productImage'][] = $image->filename;
+        }
+        return $data;
+    }
+
 }
