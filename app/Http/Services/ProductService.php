@@ -118,4 +118,14 @@ class ProductService {
         return $data;
     }
 
+    public function productCategory()
+    {
+        $productsByCategory = Product::with(['images','category'=> function($query){
+            $query->orderBy('created_at', 'desc');
+        }])
+        ->get()
+        ->groupBy('category.category_name');
+        return $productsByCategory;
+    }
+
 }

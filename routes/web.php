@@ -23,9 +23,9 @@ Route::get('/about', function () {
     return view('user.Pages.About');
 })->name('about-us');
 
-Route::get('/products', function () {
-    return view('user.Pages.Product');
-})->name('product-us');
+// Route::get('/products', function () {
+//     return view('user.Pages.Product');
+// })->name('product-us');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -49,6 +49,7 @@ Route::controller(CategoryController::class)->prefix('category')->group(function
 
 
     Route::controller(ProductController::class)->group(function(){
+        Route::get('/products','productCategory')->name('product-us');
         Route::get('/product-list','productList')->name('product.list');
         Route::post('/product-create', 'create')->name('product.create');
         Route::get('/product-add', 'index')->name('product.add');

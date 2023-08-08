@@ -69,4 +69,10 @@ class ProductController extends Controller
         return response()->json($response);
     }
 
+    public function productCategory()
+    {
+        $response = $this->productService->productCategory();
+        return view('user.Pages.Product',compact('response'));
+    }
+
 }
