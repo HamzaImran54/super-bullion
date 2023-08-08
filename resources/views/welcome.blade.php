@@ -262,7 +262,7 @@
                         mainImageContainer.empty();
                         thumbnailContainer.empty();
                         for (var i = 0; i < productImages.length; i++) {
-                            var imageUrl = 'public/storage/products/' + productImages[i];
+                            var imageUrl = 'storage/products/' + productImages[i];
                             var mainImageHtml = '<div class="qty-slide"><img class="img-responsive" src="' + imageUrl + '" alt=""></div>';
                             // var thumbnailHtml = '<div class="qty-slide"><img class="img-responsive" height="100px" src="' + imageUrl + '" alt=""></div>';
 
