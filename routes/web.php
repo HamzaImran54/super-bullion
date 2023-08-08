@@ -56,6 +56,7 @@ Route::controller(CategoryController::class)->prefix('category')->group(function
         Route::post('/prodduct-delete-{id?}', 'delete')->name('product.delete');
         Route::get('/product-edit-{id?}', 'edit')->name('product.edit');
         Route::post('/update-product','update')->name('product.update');
+        Route::post('/poduct-model-detail', 'JsonProductDetail')->name('product.detsil.json');
     });
 
 

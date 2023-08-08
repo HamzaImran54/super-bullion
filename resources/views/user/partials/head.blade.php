@@ -31,3 +31,4 @@
 
 <!-- Background css -->
 <link rel="stylesheet" id="bg-switcher-css" href="{{asset('assets/css/backgrounds/bg-4.css')}}">
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>

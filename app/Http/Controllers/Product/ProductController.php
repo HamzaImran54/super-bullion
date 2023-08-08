@@ -63,4 +63,10 @@ class ProductController extends Controller
         return redirect()->back()->with('success','Product Updated Successfully');
     }
 
+    public function JsonProductDetail(Request $request)
+    {
+        $response = $this->productService->jsonProductDetail($request);
+        return response()->json($response);
+    }
+
 }
