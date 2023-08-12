@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductCreateRequest;
+use App\Http\Requests\Product\UpdateProductRequest;
 use App\Http\Services\ProductService;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,42 @@ class ProductController extends Controller
     {
         $data = $this->productService->specificProductList($id);
         return view('auth.dashboard.pages.product-detail',compact('data'));
-        // dd($data,$data['detail']->product_name);
+    }
+
+    public function delete($id)
+    {
+        $response = $this->productService->delete($id);
+        if($response == true)
+        {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function edit($id)
+    {
+        $response = $this->productService->specificProductList($id);
+        return view('auth.dashboard.pages.update-product',compact('response'));
+
+    }
+
+    public function update(UpdateProductRequest $request)
+    {
+        $response = $this->productService->update($request);
+        return redirect()->back()->with('success','Product Updated Successfully');
+    }
+
+    public function JsonProductDetail(Request $request)
+    {
+        $response = $this->productService->jsonProductDetail($request);
+        return response()->json($response);
+    }
+
+    public function productCategory()
+    {
+        $response = $this->productService->productCategory();
+        return view('user.Pages.Product',compact('response'));
     }
 
 }

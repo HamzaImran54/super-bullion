@@ -6,7 +6,7 @@
 				<div class="content">
 					<div class="breadcrumb-wrapper d-flex align-items-center justify-content-between">
 						<div>
-							<h1>Add Product</h1>
+							<h1>Update Product</h1>
 							<p class="breadcrumbs"><span><a href="{{route('dashboard')}}">Home</a></span>
 								<span><i class="mdi mdi-chevron-right"></i></span>Product</p>
 						</div>
@@ -56,45 +56,54 @@
 										</div> --}}
 										<div class="col-lg-12">
 											<div class="ec-vendor-upload-detail">
-												<form method="POST" action="{{route('product.create')}}" enctype="multipart/form-data" class="row g-3">
+												<form method="POST" action="{{route('product.update')}}" enctype="multipart/form-data" class="row g-3">
                                                     @csrf
+                                                    <input type="hidden" name="id"  value="{{$response['detail']['id']}}">
 													<div class="col-md-6">
 														<label for="inputEmail4" class="form-label">Product name</label>
-														<input type="text" class="form-control" name="product_name" id="inputEmail4" required>
+														<input type="text" class="form-control" name="product_name" id="inputEmail4" value="{{$response['detail']['product_name']}}" required>
 													</div>
 													<div class="col-md-6">
 														<label class="form-label">Select Categories</label>
 														<select name="category_id" id="Categories" class="form-select" required>
                                                             <option disabled selected>Choose..</option>
-                                                            @foreach ($response as $category)
-                                                                <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                                            @foreach ($response['category'] as $category)
+                                                                <option value="{{$category->id}}"@if ($category->id == $response['detail']['category_id']) selected @endif>{{$category->category_name}}</option>
                                                             @endforeach
 														</select>
 													</div>
-													<div class="col-md-12">
+													<div class="col-md-6">
 														<label for="productImage" class="col-12 col-form-label">Upload Image</label>
 														<div class="col-12">
 															{{-- <input id="productImage" name="productImage[]" class="form-control" type="file" multiple accept=".png, .jpg, .jpeg" required>   For Multiple Image   --}}
-															<input id="productImage" name="productImage[]" class="form-control" type="file"  accept=".png, .jpg, .jpeg" required>
+															<input id="productImage" name="productImage[]" class="form-control" type="file"  accept=".png, .jpg, .jpeg" >
 														</div>
 													</div>
+                                                    <div class="col-md-6">
+                                                        @if ($response['detail']['images'] && count($response['detail']['images']) > 0)
+                                                            @foreach ($response['detail']['images'] as $image)
+                                                                <img src="{{ asset('storage/products/' . $image->filename) }}" alt="Product Image" width="120px" height="120px" class="img-thumbnail">
+                                                            @endforeach
+                                                        @endif
+                                                    </div>
 													<div class="col-md-12">
 														<label class="form-label">Product Description</label>
-														<textarea class="form-control" name="description" rows="2" required></textarea>
+														<textarea class="form-control" name="description" rows="2" required>{{$response['detail']['description']}}</textarea>
 													</div>
 													<div class="col-md-1 mb-25">
 														<label class="form-label">Colors</label>
 														<input type="color" name="color" class="form-control form-control-color"
 															id="exampleColorInput1"
+                                                            value="{{$response['detail']['color']}}"
 															title="Choose your color">
 													</div>
 													<div class="col-md-11 mb-25">
 														<label class="form-label">Weight</label>
-                                                            <input type="text" name="weight" class="form-control">
+                                                            <input type="text" name="weight" class="form-control" value="{{$response['detail']['weight']}}">
 													</div>
 													<div class="col-md-6">
 														<label class="form-label">Price</label>
-														<input type="number" name="price" class="form-control" id="price1" required>
+														<input type="number" name="price" class="form-control" id="price1" value="{{$response['detail']['price']}}" required>
 													</div>
 													<div class="col-md-12">
 														<button type="submit" class="btn btn-primary">Submit</button>

@@ -9,7 +9,7 @@
 								<span><i class="mdi mdi-chevron-right"></i></span>Product</p>
 						</div>
 						<div>
-							<a href="{{route('product.create')}}" class="btn btn-primary"> Add Porduct</a>
+							<a href="{{route('product.add')}}" class="btn btn-primary"> Add Porduct</a>
 						</div>
 					</div>
 					<div class="row">
@@ -44,7 +44,7 @@
 													{{-- <td>2021-10-30</td> --}}
 													<td>
 														<div class="btn-group mb-1">
-															<a href="{{route('specific.product.data'). '/' . $value->id}}" type="button" data-id="{{$value->id}}"
+															<a href="{{route('specific.product.data'). $value->id}}" type="button" data-id="{{$value->id}}"
 																class="btn btn-outline-success info-btn">Info</a>
 															<button type="button"
 																class="btn btn-outline-success dropdown-toggle dropdown-toggle-split"
@@ -54,8 +54,8 @@
 															</button>
 
 															<div class="dropdown-menu">
-																<a class="dropdown-item"  data-id="{{$value->id}}"  href="#">Edit</a>
-																<a class="dropdown-item"  data-id="{{$value->id}}"  href="#">Delete</a>
+																<a class="dropdown-item"  data-id="{{$value->id}}"  href="{{ route('product.edit', ['id' => $value->id])}}">Edit</a>
+																<a class="dropdown-item del-product"  data-id="{{$value->id}}"  href="#">Delete</a>
 															</div>
 														</div>
 													</td>
@@ -70,4 +70,31 @@
 					</div>
 				</div> <!-- End Content -->
 			</div> <!-- End Content Wrapper -->
+
+    <script>
+        $(document).ready(function(){
+            $('.del-product').click(function(){
+                var productID = $(this).data('id');
+                console.log(productID);
+                var confirmed = confirm("Are you sure you want to delete this Product?");
+                if (confirmed) {
+                    $.ajax({
+                    url: "/prodduct-delete-" + productID, // Update the URL to include the category ID
+                    type: "POST",
+                    data: { _token: '{{ csrf_token() }}' },
+                        success: function (response) {
+                        alert("Product deleted successfully!");
+                        location.reload();
+                        },
+                        error: function (error) {
+                            alert("An error occurred while deleting the category.");
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+
+
 @endsection

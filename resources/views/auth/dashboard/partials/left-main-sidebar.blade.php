@@ -76,7 +76,7 @@
                     <div class="collapse">
                         <ul class="sub-menu" id="products" data-parent="#sidebar-menu">
                             <li class="">
-                                <a class="sidenav-item-link" href="{{route('product.index')}}">
+                                <a class="sidenav-item-link" href="{{route('product.add')}}">
                                     <span class="nav-text">Add Product</span>
                                 </a>
                             </li>

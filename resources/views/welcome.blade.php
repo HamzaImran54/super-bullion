@@ -77,21 +77,25 @@
                         <div class="tab-pane fade show active" id="tab-pro-for-all">
                             <div class="row">
                                 <!-- Product Content -->
+                                @foreach ($data as $data)
+
+
                                 <div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6  ec-product-content"
                                     data-animation="fadeIn">
                                     <div class="ec-product-inner">
                                         <div class="ec-pro-image-outer">
-                                            <div class="ec-pro-image">
-                                                <a href="" class="image">
-                                                    <img class="main-image" src="assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                    <img class="hover-image" src="assets/images/product-image/2.jpg"
-                                                        alt="Product" />
-                                                </a>
-                                                <span class="percentage">20%</span>
-                                                <a href="#" class="quickview" data-link-action="quickview"
-                                                    title="Quick view" data-bs-toggle="modal"
-                                                    data-bs-target="#ec_quickview_modal"><i class="fi-rr-eye"></i></a>
+                                            <div class="ec-pro-image" style="object-fit: contain;height: 295px">
+                                                @foreach ($data->images as $image)
+                                                    <a href="" class="image">
+                                                        <img class="main-image" src="{{ asset('storage/products/' . $image->filename) }}"
+                                                            alt="Product" />
+                                                        <img class="hover-image" src="{{ asset('storage/products/' . $image->filename) }}"
+                                                            alt="Product" />
+                                                    </a>
+                                                @endforeach
+                                                {{-- <span class="percentage">20%</span> --}}
+                                                <a class="quickview"
+                                                   data-id="{{ $data->id }}"><i class="fi-rr-eye"></i></a>
                                                 {{-- <div class="ec-pro-actions">
                                                     <a href="compare.html" class="ec-btn-group compare"
                                                         title="Compare"><i class="fi fi-rr-arrows-repeat"></i></a>
@@ -103,7 +107,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="">Check Bullion Wire / French Wire / Coiled Spiral Wire For Hand Embroidery
+                                            <h5 class="ec-pro-title"><a href="#">{{ $data->product_name }}
                                                 </a></h5>
                                             <!-- <div class="ec-pro-rating">
                                                 <p>
@@ -111,12 +115,13 @@
                                                 </p>
                                             </div> -->
                                             <span class="ec-price">
-                                                <span class="new-price">$22.00</span>
+                                                <span class="new-price">PKR {{ $data->price }}</span>
                                             </span>
 
                                         </div>
                                     </div>
                                 </div>
+                                @endforeach
                             </div>
                         </div>
 
@@ -181,4 +186,95 @@
             </div>
         </div>
     </section>
+
+
+        <!-- Modal -->
+        <div class="modal fade ec_quickview_modal"  tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <button type="button" class="btn-close qty_close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                <!-- Swiper -->
+                                <div class="qty-product-cover">
+                                    <div class="qty-slide">
+                                        <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    </div>
+
+                                </div>
+                                <div class="qty-nav-thumb">
+                                    <div class="qty-slide">
+                                        <img class="img-responsive" src="assets/images/product-image/3_1.jpg" alt="">
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                <div class="quickview-pro-content">
+                                        <h5 class="ec-quick-title"></h5>
+                                    {{-- <div class="ec-quickview-rating">
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star fill"></i>
+                                        <i class="ecicon eci-star"></i>
+                                    </div> --}}
+
+                                    <div class="ec-quickview-desc"></div>
+                                    <div class="ec-quickview-price">
+                                        <span class="new-price">$80.00</span>
+                                    </div>
+                                    <div class="ec-quickview-qty">
+                                        <div class="qty-plus-minus">
+                                            <input class="qty-input" type="text" name="ec_qtybtn" value="1" />
+                                        </div>
+                                        <div class="ec-quickview-cart ">
+                                            <button class="btn btn-primary"><i class="fi-rr-shopping-basket"></i> Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal end -->
+
+    <script>
+        $(document).ready(function(){
+            $('.quickview').click(function(e){
+                e.preventDefault();
+                var id = $(this).data('id');
+                $.ajax({
+                    url: "/poduct-model-detail", // Update the URL to include the category ID
+                    type: "POST",
+                    data: { _token: '{{ csrf_token() }}' , id: id },
+                    success: function(data)
+                    {
+                        $('.ec-quick-title').text(data.detail.product_name);
+                        $('.ec-quickview-desc').text(data.detail.description);
+                        $('.new-price').text('PKR ' + data.detail.price);
+                        var productImages = data.productImage;
+                        var mainImageContainer = $('.qty-product-cover');
+                        var thumbnailContainer = $('.qty-nav-thumb');
+                        mainImageContainer.empty();
+                        thumbnailContainer.empty();
+                        for (var i = 0; i < productImages.length; i++) {
+                            var imageUrl = 'public/storage/products/' + productImages[i];
+                            var mainImageHtml = '<div class="qty-slide"><img class="img-responsive" src="' + imageUrl + '" alt=""></div>';
+                            // var thumbnailHtml = '<div class="qty-slide"><img class="img-responsive" height="100px" src="' + imageUrl + '" alt=""></div>';
+
+                            // Append HTML to the respective containers
+                            mainImageContainer.append(mainImageHtml);
+                            // thumbnailContainer.append(thumbnailHtml);
+                        }
+                        $('.ec_quickview_modal').modal('show');
+                        console.log(data);
+                    },
+                });
+            });
+        });
+    </script>
 @endsection

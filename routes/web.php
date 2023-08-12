@@ -3,6 +3,7 @@
 use App\Http\Controllers\Category\CategoryController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,17 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/',[UserController::class,'index'])->name('welcome');
 
 Route::get('/about', function () {
     return view('user.Pages.About');
 })->name('about-us');
 
-Route::get('/products', function () {
-    return view('user.Pages.Product');
-})->name('product-us');
+// Route::get('/products', function () {
+//     return view('user.Pages.Product');
+// })->name('product-us');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -47,11 +46,19 @@ Route::controller(CategoryController::class)->prefix('category')->group(function
 });
 
 //Product Routes
-Route::controller(ProductController::class)->prefix('product')->group(function(){
-    Route::get('/','index')->name('product.index');
-    Route::post('/create', 'create')->name('product.create');
-    Route::get('/product-list', 'productList')->name('product.list');
-    Route::get('/specific/data/{id?}', 'specificProductList')->name('specific.product.data');
-});
+
+
+    Route::controller(ProductController::class)->group(function(){
+        Route::get('/products','productCategory')->name('product-us');
+        Route::get('/product-list','productList')->name('product.list');
+        Route::post('/product-create', 'create')->name('product.create');
+        Route::get('/product-add', 'index')->name('product.add');
+        Route::get('/specific-product-data-{id?}', 'specificProductList')->name('specific.product.data');
+        Route::post('/prodduct-delete-{id?}', 'delete')->name('product.delete');
+        Route::get('/product-edit-{id?}', 'edit')->name('product.edit');
+        Route::post('/update-product','update')->name('product.update');
+        Route::post('/poduct-model-detail', 'JsonProductDetail')->name('product.detsil.json');
+    });
+
 
 require __DIR__.'/auth.php';
