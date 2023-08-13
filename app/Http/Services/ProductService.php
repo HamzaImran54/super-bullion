@@ -127,5 +127,12 @@ class ProductService {
         ->groupBy('category.category_name');
         return $productsByCategory;
     }
+    public function singleProductDetail($id)
+    {
+        $productsByCategory = Product::with('images','category')
+        ->where('id',$id)->first();
+        // dd($productsByCategory);
+        return $productsByCategory;
+    }
 
 }

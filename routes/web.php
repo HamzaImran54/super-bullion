@@ -58,6 +58,7 @@ Route::controller(CategoryController::class)->prefix('category')->group(function
         Route::get('/product-edit-{id?}', 'edit')->name('product.edit');
         Route::post('/update-product','update')->name('product.update');
         Route::post('/poduct-model-detail', 'JsonProductDetail')->name('product.detsil.json');
+        Route::get('/poduct-detail-{id?}', 'singleProductDetail')->name('product.detail');
     });
 
 

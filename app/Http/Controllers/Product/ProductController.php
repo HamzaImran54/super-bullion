@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Product\ProductCreateRequest;
 use App\Http\Requests\Product\UpdateProductRequest;
 use App\Http\Services\ProductService;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -73,6 +74,14 @@ class ProductController extends Controller
     {
         $response = $this->productService->productCategory();
         return view('user.Pages.Product',compact('response'));
+    }
+    public function singleProductDetail($id)
+    {
+        $response = $this->productService->singleProductDetail($id);
+        $relatedData = Product::with('images','category')
+        ->where('category_id',$response->category_id)->orderBy('created_at','desc')->limit(4)->get();
+        // dd($relatedData);
+        return view('user.Pages.SinglePage',compact('response','relatedData'));
     }
 
 }
