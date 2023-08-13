@@ -79,7 +79,7 @@ class ProductController extends Controller
     {
         $response = $this->productService->singleProductDetail($id);
         $relatedData = Product::with('images','category')
-        ->where('id',$id)->orderBy('created_at','desc')->limit(4)->get();
+        ->where('category_id',$response->category_id)->orderBy('created_at','desc')->limit(4)->get();
         // dd($relatedData);
         return view('user.Pages.SinglePage',compact('response','relatedData'));
     }

@@ -66,7 +66,7 @@
                                             </div>
                                         </div>
                                         <div class="ec-pro-content">
-                                            <h5 class="ec-pro-title"><a href="">{{ $product->product_name }}
+                                            <h5 class="ec-pro-title"><a href="{{ route('product.detail', ['id' => $product->id]) }}">{{ $product->product_name }}
                                                 </a></h5>
                                             <!-- <div class="ec-pro-rating">
                                                 <p>
